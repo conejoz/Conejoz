@@ -18,7 +18,12 @@ class Messages extends Translations {
           "Confirm password": "Confirm password",
           "Confirm your password": "Confirm your password",
           "I forgot my password": "I forgot my password",
-          "Hola": "Hello",
+          "Hello": "Hello",
+          "Welcome explorer": "Welcome explorer",
+          "Initializing dream visualizer": "Initializing dream visualizer",
+          "New password": "New password",
+          "Press the button. You will receive an email to create a new access key":
+              "Press the button. You will receive an email to create a new access key"
         },
         'es_ES': {
           "Welcome": "Bienvenido",
@@ -35,7 +40,13 @@ class Messages extends Translations {
           "Confirm password": "Confirmar contraseña",
           "Confirm your password": "Confirma tu contraseña",
           "I forgot my password": "Olvidé mi contraseña",
-          "Hola": "Hola",
+          "Hello": "Hola",
+          "Welcome explorer": "Bienvenido/a explorador/a",
+          "Initializing dream visualizer":
+              "Inicializando visualizador de sueños",
+          "New password": "Nueva contraseña",
+          "Press the button. You will receive an email to create a new access key":
+              "Presiona el botón. Recibirás un correo para crear una nueva clave de acceso"
         }
       };
 }

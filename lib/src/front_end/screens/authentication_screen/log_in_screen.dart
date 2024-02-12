@@ -2,7 +2,7 @@ import 'package:conejoz/src/front_end/global_components/custom_icons/custom_icon
 import 'package:conejoz/src/back_end/controllers/login_controller.dart';
 import 'package:conejoz/src/back_end/repositories/authentication_repository/authentication_repository.dart';
 import 'package:conejoz/src/back_end/repositories/authentication_repository/exceptions/login_email_password_failure.dart';
-import 'package:conejoz/src/front_end/screens/authentication_screen/CHECK_forget_password_widget.dart';
+import 'package:conejoz/src/front_end/screens/authentication_screen/forget_password_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

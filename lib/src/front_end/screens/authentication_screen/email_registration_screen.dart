@@ -27,7 +27,7 @@ class SignupScreen extends StatelessWidget {
                     Icon(
                       ConejozLogos.conejozBlackFill,
                       size: 50.0,
-                      color: Theme.of(context).colorScheme.onSurface,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     Spacer(),
                     TextButton(

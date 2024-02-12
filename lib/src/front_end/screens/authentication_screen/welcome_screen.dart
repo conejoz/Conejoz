@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:conejoz/src/front_end/global_components/custom_icons/custom_icons.dart';
 import 'package:conejoz/src/front_end/global_components/app_strings/global_strings.dart';
 import 'package:conejoz/src/front_end/screens/authentication_screen/email_registration_screen.dart';
@@ -43,19 +44,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           const SizedBox(
                             height: 10,
                           ),
-                          Text(
-                            appName,
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.onPrimary,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "ver. $appVersion",
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.onPrimary,
+                          SizedBox(
+                            child: AnimatedTextKit(
+                              repeatForever: true,
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  "Welcome explorer".tr,
+                                ),
+                                TypewriterAnimatedText(
+                                  "Initializing dream visualizer".tr,
+                                ),
+                                TypewriterAnimatedText(
+                                  appName,
+                                ),
+                                TypewriterAnimatedText(
+                                  "Ver. $appVersion",
+                                ),
+                              ],
                             ),
                           ),
                         ],
