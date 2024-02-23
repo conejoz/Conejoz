@@ -12,15 +12,13 @@ class ForgetPasswordBottomSheet {
         padding: const EdgeInsets.all(engDefaultSize),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
-            "New password".tr,
+            "Restore your password".tr,
             style: const TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
-              "Press the button. You will receive an email to create a new access key"
-                  .tr),
+          Text("Select one of the options below".tr),
           const SizedBox(height: 30),
           GestureDetector(
             onTap: () {

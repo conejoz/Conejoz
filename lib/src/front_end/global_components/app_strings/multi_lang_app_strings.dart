@@ -44,9 +44,9 @@ class Messages extends Translations {
           "Welcome explorer": "Bienvenido/a explorador/a",
           "Initializing dream visualizer":
               "Inicializando visualizador de sueños",
-          "New password": "Nueva contraseña",
-          "Press the button. You will receive an email to create a new access key":
-              "Presiona el botón. Recibirás un correo para crear una nueva clave de acceso"
+          "Restore your password": "Restablece tu contraseña",
+          "Select one of the options below":
+              "Selecciona una de las siguientes opciones"
         }
       };
 }
