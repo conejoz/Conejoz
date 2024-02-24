@@ -100,6 +100,18 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  Future<void> resetPassword(String email) async {
+    try {
+      await _auth
+          .sendPasswordResetEmail(email: email)
+          .then((value) => Get.snackbar("Exito", "Revisa tu correo"));
+    } catch (e) {
+      print("Failed to reset password: $e");
+      Get.snackbar("Ups!", "Correo no registrado");
+      throw e; // Rethrow the exception to handle it in the UI.
+    }
+  }
+
   Future<void> logout() async => await _auth.signOut();
   // This method logs out the current user.
 }
