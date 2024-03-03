@@ -23,7 +23,20 @@ class Messages extends Translations {
           "Initializing dream visualizer": "Initializing dream visualizer",
           "New password": "New password",
           "Press the button. You will receive an email to create a new access key":
-              "Press the button. You will receive an email to create a new access key"
+              "Press the button. You will receive an email to create a new access key",
+          "Select one of the options below": "Select one of the options below",
+          "Loading...": "Loading...",
+          "Public Logs.": "Public Logs.",
+          "Journal.": "Journal.",
+          "New Log": "New Log",
+          "AI Image": "AI Image",
+          "Logs": "Logs",
+          "Rabbit": "Rabbit",
+          "Images Gallery": "Images Gallery",
+          "Title": "Title",
+          "Tags separated by commas": "Tags separated by commas",
+          "Write as much as you need here": "Write as much as you need here",
+          "No title": "No title"
         },
         'es_ES': {
           "Welcome": "Bienvenido",
@@ -46,7 +59,22 @@ class Messages extends Translations {
               "Inicializando visualizador de sueños",
           "Restore your password": "Restablece tu contraseña",
           "Select one of the options below":
-              "Selecciona una de las siguientes opciones"
+              "Selecciona una de las siguientes opciones",
+          "New password": "Nueva contraseña",
+          "Press the button. You will receive an email to create a new access key":
+              "Presiona el botón. Recibirás un correo para crear una nueva clave de acceso",
+          "Loading...": "Cargando...",
+          "Public Logs.": "Registros públicos.",
+          "Journal.": "Bitácora.",
+          "New Log": "Nueva Entrada",
+          "AI Image": "Imágen con IA",
+          "Logs": "Registros",
+          "Rabbit": "Conejo",
+          "Images Gallery": "Galeria de Imágenes",
+          "Title": "Título",
+          "Tags separated by commas": "Etiquetas separadas por comas",
+          "Write as much as you need here": "Escribe cuanto necesites acá",
+          "No title": "Sin título"
         }
       };
 }

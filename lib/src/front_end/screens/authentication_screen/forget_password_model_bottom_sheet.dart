@@ -1,7 +1,7 @@
-import 'package:conejoz/src/front_end/global_components/text_strings.dart';
 import 'package:conejoz/src/front_end/global_components/ui_variables.dart';
 import 'package:conejoz/src/front_end/screens/authentication_screen/forget_password_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:get/get.dart';
 
 class ForgetPasswordBottomSheet {
@@ -32,13 +32,13 @@ class ForgetPasswordBottomSheet {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.grey.shade200,
               ),
-              child: const Row(
+              child: Row(
                 children: [
-                  Icon(Icons.email_outlined, size: 60),
-                  SizedBox(width: 20),
+                  const Icon(Icons.email_outlined, size: 60),
+                  const SizedBox(width: 20),
                   Text(
-                    "E-mail",
-                    style: TextStyle(color: Colors.black),
+                    "Email".tr,
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ],
               ),

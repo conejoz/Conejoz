@@ -6,6 +6,7 @@ import 'package:conejoz/src/front_end/screens/journal_screen/logs_list_screen.da
 import 'package:conejoz/src/front_end/screens/journal_screen/new_text_log_screen.dart';
 import 'package:conejoz/src/front_end/screens/journal_screen/user_gallery_screen.dart';
 import 'package:conejoz/src/front_end/screens/journal_screen/user_profile_screen.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:flutter/material.dart';
 
 //* Main features of the app.
@@ -22,7 +23,7 @@ class JournalMenu extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(
-          "Journal.",
+          "Journal.".tr,
           style: TextStyle(
               color: Theme.of(context).colorScheme.onSurface, fontSize: 18),
         ),
@@ -42,21 +43,21 @@ class JournalMenu extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         ConejozTextForRouteButton(
-                            text: "New Log", context: context),
+                            text: "New Log".tr, context: context),
                         SizedBox(height: defaultTextSpacer),
                         ConejozTextForRouteButton(
-                            text: "AI Image", context: context),
+                            text: "AI Image".tr, context: context),
                         SizedBox(height: defaultTextSpacer),
                         /*_buildText("New Audio Entry", context),
                         SizedBox(height: defaultTextSpacer),*/
                         ConejozTextForRouteButton(
-                            text: "Logs", context: context),
+                            text: "Logs".tr, context: context),
                         SizedBox(height: defaultTextSpacer),
                         ConejozTextForRouteButton(
-                            text: "Rabbit", context: context),
+                            text: "Rabbit".tr, context: context),
                         SizedBox(height: defaultTextSpacer),
                         ConejozTextForRouteButton(
-                            text: "Images Gallery", context: context),
+                            text: "Images Gallery".tr, context: context),
                       ],
                     ),
                   ),

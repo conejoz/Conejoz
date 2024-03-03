@@ -3,6 +3,7 @@ import 'package:conejoz/src/front_end/screens/journal_screen/journal_screen.dart
 import 'package:conejoz/src/front_end/screens/public_feed_screen/public_feed_screen.dart';
 import 'package:conejoz/src/front_end/screens/settings_screen/settings_screen.dart';
 import 'package:conejoz/src/back_end/repositories/user_repository/user_repository.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:flutter/material.dart';
 
 //* Main Screen of the app.
@@ -42,11 +43,11 @@ class _ConejozDashboardState extends State<ConejozDashboard> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Row(
           children: [
-            Text("Welcome",
+            Text("Welcome".tr,
                 style: TextStyle(color: Theme.of(context).colorScheme.primary)),
             const SizedBox(width: 5),
             Text(
-              _username ?? "Loading...",
+              _username ?? "Loading...".tr,
               style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
             )
           ],

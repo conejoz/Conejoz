@@ -1,4 +1,3 @@
-import 'package:conejoz/src/front_end/global_components/text_strings.dart';
 import 'package:conejoz/src/back_end/repositories/authentication_repository/exceptions/login_email_password_failure.dart';
 import 'package:conejoz/src/front_end/screens/authentication_screen/forget_password_widget.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +21,8 @@ class LoginFormWidget extends StatelessWidget {
             controller: emailController,
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.person_outline),
-              labelText: engEmail,
-              hintText: engEmail,
+              labelText: "engEmail",
+              hintText: "engEmail",
               border: OutlineInputBorder(),
             ),
             validator: (value) {
@@ -41,8 +40,8 @@ class LoginFormWidget extends StatelessWidget {
             obscureText: true,
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.fingerprint),
-              labelText: engPassword,
-              hintText: engPassword,
+              labelText: "engPassword",
+              hintText: "engPassword",
               border: OutlineInputBorder(),
               suffixIcon: Icon(Icons.remove_red_eye),
             ),
@@ -76,7 +75,7 @@ class LoginFormWidget extends StatelessWidget {
                   }
                 }
               },
-              child: Text(engLogin.toUpperCase()),
+              child: Text("LogIn"),
             ),
           )
         ],

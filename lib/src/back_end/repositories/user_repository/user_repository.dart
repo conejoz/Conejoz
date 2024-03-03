@@ -270,6 +270,40 @@ class UserRepository extends GetxController {
     return [];
   }
 
+  Future<bool> deleteUserEntry(String entryId) async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        print("User is not authenticated.");
+        return false;
+      }
+
+      final userId = user.uid;
+
+      final userDocumentRef = _db.collection("rabbits").doc(userId);
+      final docSnapshot = await userDocumentRef.get();
+      if (docSnapshot.exists) {
+        final Map<String, dynamic>? userEntries =
+            docSnapshot.data()?['entries'];
+        if (userEntries != null) {
+          userEntries.remove(entryId); // Remove the entry by ID
+          await userDocumentRef.update({'entries': userEntries});
+          print("Entry deleted successfully!");
+          return true;
+        } else {
+          print("User entries map is null or empty.");
+          return false;
+        }
+      } else {
+        print("User document does not exist.");
+        return false;
+      }
+    } catch (error) {
+      print("Error deleting entry: $error");
+      return false;
+    }
+  }
+
   // * Functions used in the "Journal" feature:
 
   Future<void> addImageToUserGallery(String userId, String imageUrl) async {

@@ -2,6 +2,7 @@ import 'package:conejoz/src/back_end/repositories/user_repository/user_repositor
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:uuid/uuid.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:get/get.dart';
 
 class NewTextLog extends StatefulWidget {
@@ -69,7 +70,7 @@ class _NewTextLogState extends State<NewTextLog> {
               Navigator.pop(context);
             },
           ),
-          title: Text("New log",
+          title: Text("New Log".tr,
               style: TextStyle(color: Theme.of(context).colorScheme.primary))),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -85,7 +86,7 @@ class _NewTextLogState extends State<NewTextLog> {
                 hintStyle: TextStyle(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
-                hintText: 'Title',
+                hintText: 'Title'.tr,
                 border: InputBorder.none,
               ),
               maxLines: null,
@@ -100,7 +101,7 @@ class _NewTextLogState extends State<NewTextLog> {
                 hintStyle: TextStyle(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
-                hintText: 'Tags separated by commas',
+                hintText: 'Tags separated by commas'.tr,
                 border: InputBorder.none,
               ),
               maxLines: null,
@@ -113,7 +114,7 @@ class _NewTextLogState extends State<NewTextLog> {
                 hintStyle: TextStyle(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
-                hintText: 'Write as much as you need here',
+                hintText: 'Write as much as you need here'.tr,
                 border: InputBorder.none,
               ),
               maxLines: null,
