@@ -286,6 +286,36 @@ class UserRepository extends GetxController {
     }
   }
 
+  Future<bool> deleteUserImage(String userId, String imageUrl) async {
+    try {
+      final userDocumentRef = _db.collection("rabbits").doc(userId);
+      final docSnapshot = await userDocumentRef.get();
+      if (docSnapshot.exists) {
+        final List<dynamic>? userImages = docSnapshot.data()?['userimages'];
+        if (userImages != null) {
+          if (userImages.contains(imageUrl)) {
+            userImages.remove(imageUrl);
+            await userDocumentRef.update({'userimages': userImages});
+            print("Image deleted successfully!");
+            return true;
+          } else {
+            print("Image not found in user's gallery.");
+            return false;
+          }
+        } else {
+          print("User images list is null or empty.");
+          return false;
+        }
+      } else {
+        print("User document does not exist.");
+        return false;
+      }
+    } catch (error) {
+      print("Error deleting image: $error");
+      return false;
+    }
+  }
+
   Future<void> createLog(
       // This function saves the text entry of a dream to the user's journal.
       String userUniqueId,

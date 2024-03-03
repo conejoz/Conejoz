@@ -34,6 +34,22 @@ class _UserGalleryState extends State<UserGallery> {
     }
   }
 
+  Future<void> deleteImage(int index) async {
+    final user = AuthenticationRepository.instance.firebaseUser.value;
+    if (user != null) {
+      final userId = user.uid;
+      final success = await UserRepository.instance
+          .deleteUserImage(userId, userImageUrls[index]);
+      if (success) {
+        setState(() {
+          userImageUrls.removeAt(index);
+        });
+      } else {
+        // Handle deletion failure
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,10 +66,6 @@ class _UserGalleryState extends State<UserGallery> {
           "User Gallery",
           style: TextStyle(color: Theme.of(context).colorScheme.primary),
         ),
-        //* Activate the following line once the logic to delete the pictures is ready
-        /* actions: const [
-          IconButton(onPressed: null, icon: Icon(Icons.more_vert))
-        ], */
       ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -79,6 +91,32 @@ class _UserGalleryState extends State<UserGallery> {
                           fit: BoxFit.contain,
                         ),
                       ),
+                    );
+                  },
+                );
+              },
+              onLongPress: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text("Delete Image"),
+                      content: Text("Do you want to delete this image?"),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("Cancel"),
+                        ),
+                        TextButton(
+                          onPressed: () async {
+                            await deleteImage(index);
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("Delete"),
+                        ),
+                      ],
                     );
                   },
                 );

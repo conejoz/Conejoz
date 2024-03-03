@@ -39,6 +39,13 @@ class ConejozManual extends StatelessWidget {
             height: 15,
           ),
           Text(
+            "* You can now delete images from the gallery by long pressing them. Also a new theme was added to the app.",
+            style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Text(
             "I hope that you find Conejoz helpful. If you require an specific feature please let me know. I would like to check on it. Peace and good dreaming -Lazarus",
             style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
           ),

@@ -1,5 +1,6 @@
 import 'package:conejoz/src/back_end/repositories/user_repository/user_repository.dart';
 import 'package:conejoz/src/front_end/global_components/custom_icons/custom_icons.dart';
+import 'package:conejoz/src/front_end/global_components/offline_themes/flutter_blackened_dystopia_theme.dart';
 import 'package:conejoz/src/front_end/global_components/offline_themes/flutter_midnight_neon_theme.dart';
 import 'package:conejoz/src/front_end/global_components/offline_themes/flutter_monokai_theme.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +9,10 @@ import 'package:get/get.dart';
 final List<ThemeData> availableThemes = [
   FlutterMonokaiTheme.lightTheme,
   FluttterMidnightNeonTheme.lightTheme,
+  FlutterBlackenedDystopiaTheme.lightTheme
 ];
 
-//! If you add themes you need to update the User Repository functions.
+//! If you add themes you need to update the Authentication Repository functions.
 
 class ThemeSelector extends StatelessWidget {
   const ThemeSelector({Key? key});
@@ -62,6 +64,16 @@ class ThemeSelector extends StatelessWidget {
                                   .updateUserAppTheme('atari');
                               Get.changeTheme(
                                   FluttterMidnightNeonTheme.lightTheme);
+                            },
+                          ),
+                          ListTile(
+                            leading: const Icon(Icons.palette_outlined),
+                            title: const Text('Dystopia'),
+                            onTap: () {
+                              UserRepository.instance
+                                  .updateUserAppTheme('dystopia');
+                              Get.changeTheme(
+                                  FlutterBlackenedDystopiaTheme.lightTheme);
                             },
                           ),
                         ],

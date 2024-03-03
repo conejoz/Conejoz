@@ -1,4 +1,5 @@
 import 'package:conejoz/src/back_end/repositories/user_repository/user_repository.dart';
+import 'package:conejoz/src/front_end/global_components/offline_themes/flutter_blackened_dystopia_theme.dart';
 import 'package:conejoz/src/front_end/global_components/offline_themes/flutter_midnight_neon_theme.dart';
 import 'package:conejoz/src/front_end/global_components/offline_themes/flutter_monokai_theme.dart';
 import 'package:conejoz/src/front_end/screens/app_dashboard_screen/app_dashboard_screen.dart';
@@ -54,6 +55,9 @@ class AuthenticationRepository extends GetxController {
         break;
       case "monokai":
         Get.changeTheme(FlutterMonokaiTheme.lightTheme);
+        break;
+      case "dystopia":
+        Get.changeTheme(FlutterBlackenedDystopiaTheme.lightTheme);
         break;
       // Add more cases for additional themes as needed
       default:
