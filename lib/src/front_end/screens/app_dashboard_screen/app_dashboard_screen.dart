@@ -4,6 +4,7 @@ import 'package:conejoz/src/front_end/screens/public_feed_screen/public_feed_scr
 import 'package:conejoz/src/front_end/screens/settings_screen/settings_screen.dart';
 import 'package:conejoz/src/back_end/repositories/user_repository/user_repository.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 //* Main Screen of the app.
@@ -43,13 +44,17 @@ class _ConejozDashboardState extends State<ConejozDashboard> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Row(
           children: [
-            Text("Welcome".tr,
-                style: TextStyle(color: Theme.of(context).colorScheme.primary)),
-            const SizedBox(width: 5),
-            Text(
-              _username ?? "Loading...".tr,
-              style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-            )
+            AnimatedTextKit(
+              repeatForever: true,
+              animatedTexts: [
+                TypewriterAnimatedText("Welcome".tr,
+                    textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary)),
+                TypewriterAnimatedText(_username ?? "Loading...".tr,
+                    textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary)),
+              ],
+            ),
           ],
         ),
         automaticallyImplyLeading: false,

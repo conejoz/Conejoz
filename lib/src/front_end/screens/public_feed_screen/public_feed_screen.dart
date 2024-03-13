@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:conejoz/src/front_end/screens/public_feed_screen/public_dream_widget.dart';
 import 'package:conejoz/src/front_end/screens/public_feed_screen/public_tags_explorer_screen.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class FeedScreen extends StatefulWidget {
@@ -17,10 +18,14 @@ class _FeedScreenState extends State<FeedScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(
-          "Public Logs.".tr,
-          style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurface, fontSize: 18),
+        title: AnimatedTextKit(
+          repeatForever: true,
+          animatedTexts: [
+            TypewriterAnimatedText("Public Logs.".tr,
+                textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                    fontSize: 18)),
+          ],
         ),
         automaticallyImplyLeading: false,
         actions: [

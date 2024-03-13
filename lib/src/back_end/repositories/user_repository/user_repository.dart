@@ -462,6 +462,32 @@ class UserRepository extends GetxController {
     }
   }
 
+  //! Test starts here.
+
+  Future<Map<String, dynamic>?> getPublicRabbitData(String rabbitName) async {
+    try {
+      final querySnapshot = await _db
+          .collection("rabbits")
+          .where("rabbitname", isEqualTo: rabbitName)
+          .limit(1)
+          .get();
+
+      if (querySnapshot.docs.isNotEmpty) {
+        final docSnapshot = querySnapshot.docs.first;
+        return docSnapshot.data();
+      } else {
+        print(
+            "User document for $rabbitName not found in the 'rabbits' collection.");
+        return null;
+      }
+    } catch (error) {
+      print("Error getting rabbit data by rabbit name: $error");
+      return null;
+    }
+  }
+
+  //! Test ends here.
+
   Future<Map<String, dynamic>?> getRabbitDataByUserId() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
