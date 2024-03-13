@@ -1,19 +1,18 @@
-import 'package:conejoz/src/back_end/repositories/authentication_repository/authentication_repository.dart';
-import 'package:conejoz/src/front_end/screens/journal_screen/profile_image_selector_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:conejoz/src/back_end/repositories/user_repository/user_repository.dart';
 
 double regularSpacer = 25;
 
-class RabbitCard extends StatefulWidget {
+class PublicRabbitScreen extends StatefulWidget {
   final String rabbit;
-  const RabbitCard({Key? key, required this.rabbit}) : super(key: key);
+  const PublicRabbitScreen({Key? key, required this.rabbit}) : super(key: key);
   @override
-  _RabbitCardState createState() => _RabbitCardState();
+  _PublicRabbitScreenState createState() => _PublicRabbitScreenState();
 }
 
-class _RabbitCardState extends State<RabbitCard> {
+class _PublicRabbitScreenState extends State<PublicRabbitScreen> {
   final _userRepo = UserRepository.instance;
   String? _username;
   String? _bio;
@@ -55,10 +54,8 @@ class _RabbitCardState extends State<RabbitCard> {
           },
         ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(
-          "Rabbit",
-          style: TextStyle(color: Theme.of(context).colorScheme.primary),
-        ),
+        title: Text("Public Info",
+            style: TextStyle(color: Theme.of(context).colorScheme.primary)),
       ),
       body: Column(
         children: [
@@ -79,9 +76,14 @@ class _RabbitCardState extends State<RabbitCard> {
                 ),
               ),
               // Access username from _username variable
-              Text(_username ?? "Loading...",
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary)),
+              AnimatedTextKit(
+                repeatForever: true,
+                animatedTexts: [
+                  TypewriterAnimatedText(_username ?? "Loading...",
+                      textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary)),
+                ],
+              ),
               SizedBox(
                 width: regularSpacer,
               )
@@ -94,7 +96,14 @@ class _RabbitCardState extends State<RabbitCard> {
               Text("Bio:",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary)),
-              Text(_bio ?? "Loading..."),
+              AnimatedTextKit(
+                repeatForever: true,
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    _bio ?? "Loading...",
+                  ),
+                ],
+              ),
             ],
           ),
           SizedBox(height: regularSpacer),
@@ -104,7 +113,14 @@ class _RabbitCardState extends State<RabbitCard> {
               Text("Location:",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary)),
-              Text(_location ?? "Loading..."),
+              AnimatedTextKit(
+                repeatForever: true,
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    _location ?? "Loading...",
+                  ),
+                ],
+              ),
             ],
           ),
           SizedBox(height: regularSpacer),
@@ -114,7 +130,14 @@ class _RabbitCardState extends State<RabbitCard> {
               Text("Contact info:",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary)),
-              Text(_contactInfo ?? "Loading..."),
+              AnimatedTextKit(
+                repeatForever: true,
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    _contactInfo ?? "Loading...",
+                  ),
+                ],
+              ),
             ],
           ),
           Spacer(),

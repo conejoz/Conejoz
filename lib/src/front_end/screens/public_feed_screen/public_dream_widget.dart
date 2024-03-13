@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:conejoz/src/front_end/screens/public_feed_screen/public_log_reader.dart';
-import 'package:conejoz/src/front_end/screens/public_feed_screen/rabbit_card_screen.dart';
+import 'package:conejoz/src/front_end/screens/public_feed_screen/public_rabbit_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -66,7 +66,7 @@ class _PublicDreamWidgetState extends State<PublicDreamWidget> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => RabbitCard(rabbit: widget.rabbit),
+        builder: (context) => PublicRabbitScreen(rabbit: widget.rabbit),
       ),
     );
   }
