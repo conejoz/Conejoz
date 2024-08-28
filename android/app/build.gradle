@@ -52,7 +52,7 @@ def keystoreProperties = new Properties()
     defaultConfig {
         applicationId "com.binocu.conejoz"
         minSdkVersion 19
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion localProperties.getProperty('flutter.targetSdkVersion').toInteger()
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

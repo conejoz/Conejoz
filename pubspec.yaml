@@ -2,7 +2,7 @@ name: conejoz
 description: Dream journal.
 publish_to: 'none'
 
-version: 2.1.2+6
+version: 2.1.3+7
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
